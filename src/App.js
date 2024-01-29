@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Spinner from "./components/spinner/Spinner";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { appPath } from "./constants/app_path";
 import Layout from "./template/Layout";
 import AuthGate from "./template/AuthGate";
@@ -15,8 +15,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path={appPath.home} element={<Layout />}>
-            <Route path={appPath.home} element={<HomePage/>}/>
-            <Route path={appPath.customer} element={<Customer/>}/>
+            <Route path={appPath.home} element={<HomePage />} />
+            <Route path={appPath.customer} element={<Customer />} />
           </Route>
 
           <Route path={appPath.admin} element={<AuthGate></AuthGate>}></Route>
