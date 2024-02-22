@@ -1,4 +1,7 @@
 import axios from "axios";
+import { store } from "..";
+
+import { setLoadingOff, setLoadingOn } from "../redux/spinnerSlice";
 
 export let https = axios.create({
   baseURL: "https://airbnbnew.cybersoft.edu.vn/",

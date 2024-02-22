@@ -4,9 +4,22 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import { store } from "./redux/rootSlice";
+
+import spinnerSlice from "./redux/spinnerSlice";
+import userSlice from "./redux/userSlice";
+import managementSlice from "./redux/managementSlice";
+import { configureStore } from "@reduxjs/toolkit";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+export let store = configureStore({
+  reducer:{
+    spinnerSlice,
+    userSlice,
+    managementSlice,
+  }
+});
+
 root.render(
   <Provider store={store}>
     <App />
