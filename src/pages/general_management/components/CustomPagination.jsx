@@ -19,7 +19,8 @@ export default function CustomPagination({
           ? defaultLengthPage
           : currentPage + deltaPage
         : maxPageNumber;
-    const start = end - defaultLengthPage + 1;
+    let start = end - defaultLengthPage + 1;
+    start = start < 1 ? 1 : start
     const toFirstStyle = currentPage === 1 ? "text-gray-400" : "";
     const toLastStyle = currentPage === maxPageNumber ? "text-gray-400" : "";
 

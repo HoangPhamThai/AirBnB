@@ -1,3 +1,4 @@
+import { message } from "antd";
 import axios from "axios";
 import { store } from "..";
 
@@ -19,6 +20,7 @@ https.interceptors.request.use(
     return config;
   },
   function (error) {
+    console.log(error);
     return Promise.reject(error);
   }
 );
@@ -29,6 +31,7 @@ https.interceptors.response.use(
     return response;
   },
   function (error) {
+    message.error(error.response.data.content)
     store.dispatch(setLoadingOff());
     return Promise.reject(error);
   }

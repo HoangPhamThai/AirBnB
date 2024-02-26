@@ -9,6 +9,7 @@ export default function Spinner() {
         width: "100vw",
         height: "100vh",
         background: "black",
+        opacity: 0.3,
         position: "fixed",
         top: 0,
         left: 0,

@@ -8,16 +8,22 @@ import { Provider } from "react-redux";
 import spinnerSlice from "./redux/spinnerSlice";
 import userSlice from "./redux/userSlice";
 import managementSlice from "./redux/managementSlice";
+import bookingSlice from "./redux/bookingSlice";
+import locationSlice from "./redux/locationSlice";
+import roomSlice from "./redux/roomSlice";
 import { configureStore } from "@reduxjs/toolkit";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 export let store = configureStore({
-  reducer:{
+  reducer: {
     spinnerSlice,
     userSlice,
     managementSlice,
-  }
+    bookingSlice,
+    locationSlice,
+    roomSlice,
+  },
 });
 
 root.render(

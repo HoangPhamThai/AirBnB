@@ -21,10 +21,8 @@ export default function ListRentedRoom() {
 
   return (
     <div>
-      <div className=" text-xl font-bold mb-[20px]">
-      {labelListRentedRoom}
-      </div>
-      
+      <div className=" text-xl font-bold mb-[20px]">{labelListRentedRoom}</div>
+
       {listRoom &&
         listRoom.map((room) => {
           return <RentedRoom roomInfo={room} />;

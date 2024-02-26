@@ -16,13 +16,24 @@ export const {} = managementSlice.actions
 
 export default managementSlice.reducer
 
-export const getListUserByPage = async ({pageId, pageSize}) => {
+export const getListUserByPage = async ({pageId, keyword='', pageSize=10}) => {
     const {data} = await https.get(apiPath.getListUserByPage, {
         params:{
+            keyword: keyword,
             pageIndex: pageId,
             pageSize: pageSize
         }
     })
-    console.log(data)
     return data.content
+}
+
+export const deleteUser = async (userId) => {
+    console.log(userId)
+    const {response} = await https.delete(apiPath.userManagement, {
+        params: {
+            id: userId
+        }
+    })
+    console.log(response)
+    return response.message
 }
