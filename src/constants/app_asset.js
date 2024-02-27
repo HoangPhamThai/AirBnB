@@ -1,0 +1,1 @@
+export const iconLogo = './img/logo.png'

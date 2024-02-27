@@ -5,6 +5,11 @@ export const userRole = {
   user: "USER",
 };
 
+export const authType = {
+  login: "login",
+  register: "register"
+}
+
 export const labelUpdateAvatar = "Cập nhật ảnh";
 export const labelLivingRoom = "Phòng khách";
 export const labelBedRoom = "Phòng ngủ";
@@ -50,6 +55,33 @@ export const labelLeaveDate = "Ngày đi";
 export const labelGuestNumber = "Số khách";
 export const labelImage = "Hình ảnh";
 export const labelInfo = "Thông tin";
+export const labelSignUp = "Đăng ký";
+export const labelLogIn = "Đăng nhập";
+
+export const labelUserName = "Tên đăng nhập";
+export const labelPassword = "Mật khẩu";
+export const labelConfirmPassword = "Nhập lại mật khẩu";
+export const labelLoginSuccess = "Đăng nhập thành công"
+export const labelLoginFailure = "Đăng nhập thất bại"
+export const labelSignUpSuccess = "Đăng ký thành công"
+export const labelSignUpFailure = "Đăng ký thất bại"
+
+export const labelPhoneNumber = "Số điện thoại"
+export const labelBirthday = "Ngày sinh"
+export const labelMale = "Nam"
+export const labelFemale = "Nữ"
+
+
+export const messages = {
+  fieldCannotNull: "Field này không được để trống",
+  invalidPassword: "Yêu cầu mật khẩu: dài hơn 8 ký tự, có ít nhất 1 chữ hoa, có ít nhất 1 số.",
+  invalidEmail: "Email không hợp lệ",
+  notMatchPassword: "The password does not match",
+  selectGender: "Chọn giới tính",
+  selectBirthday: "Chọn ngày sinh"
+};
+
+export const keyUserInfo ='USER_INFOR'
 
 export const fieldKey = {
   name: "name",
@@ -64,6 +96,12 @@ export const fieldKey = {
   guestNumber: "guestNumber",
   image: "image",
   info: "info",
+  username: "username",
+  password: "password",
+  confirmPassword: "confirm_password",
+  gender: "gender",
+  birthday: "birthday",
+  phone: "phone"
 };
 
 export const management = {

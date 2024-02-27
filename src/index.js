@@ -11,6 +11,7 @@ import managementSlice from "./redux/managementSlice";
 import bookingSlice from "./redux/bookingSlice";
 import locationSlice from "./redux/locationSlice";
 import roomSlice from "./redux/roomSlice";
+import authSlice from "./redux/authSlice";
 import { configureStore } from "@reduxjs/toolkit";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -23,6 +24,7 @@ export let store = configureStore({
     bookingSlice,
     locationSlice,
     roomSlice,
+    authSlice,
   },
 });
 

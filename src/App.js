@@ -36,8 +36,8 @@ function App() {
             />
           </Route>
 
-          <Route path={appPath.login} component={LoginForm} />
-          <Route path={appPath.register} component={RegisterForm} />
+          <Route path={appPath.login} element={<LoginForm/>} />
+          <Route path={appPath.register} element={<RegisterForm/>} />
         </Routes>
       </BrowserRouter>
     </>

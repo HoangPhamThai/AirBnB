@@ -17,7 +17,7 @@ const userSlice = createSlice({
   },
 });
 
-export const {} = userSlice.actions;
+export const {setUser} = userSlice.actions;
 
 export default userSlice.reducer;
 
@@ -26,3 +26,4 @@ export const getRentedRoomsByUser = async () => {
   console.log(data)
   return data.content;
 };
+
