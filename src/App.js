@@ -15,6 +15,9 @@ function App() {
           <Route path={appPath.home} element={<Layout />}></Route>
 
           <Route path={appPath.admin} element={<AuthGate></AuthGate>}></Route>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </BrowserRouter>
     </>
