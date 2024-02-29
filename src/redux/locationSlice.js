@@ -3,7 +3,7 @@ import { apiPath } from '../constants/api_path';
 import { https } from '../services/api';
 
 const initialState = {
-
+    listLocation: []
 }
 
 const locationSlice = createSlice({

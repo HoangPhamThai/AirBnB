@@ -7,7 +7,10 @@ export default function Layout() {
   return (
     <div>
       <Header />
-      <Outlet />
+      <div className="container">
+        <Outlet />
+      </div>
+
       <Footer />
     </div>
   );

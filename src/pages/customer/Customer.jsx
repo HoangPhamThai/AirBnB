@@ -7,7 +7,7 @@ export default function Customer() {
     // const currentUser = useSelector((state) => state.userSlice)
 
   return (
-    <div className='container'>
+    <div >
         <CustomerInfo/>
     </div>
   )

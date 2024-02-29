@@ -23,7 +23,7 @@ export default function ListRoom({ listRoom, onListChanged }) {
       dataIndex: fieldKey.info,
       key: fieldKey.info,
       render: (_, record) => {
-        return <RoomInfo roomInfo={record.info} />;
+        return <RoomInfo room={record.info} />;
       },
     },
     {

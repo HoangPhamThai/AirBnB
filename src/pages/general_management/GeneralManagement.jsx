@@ -28,7 +28,7 @@ export default function GeneralManagement() {
   };
 
   return (
-    <div className="flex container">
+    <div className="flex ">
       <div className="mr-3">
         <SiderMenu setMenu={setMenu} />
       </div>

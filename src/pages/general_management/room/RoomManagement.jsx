@@ -37,7 +37,7 @@ export default function RoomManagement() {
   };
 
   return (
-    <div className="container">
+    <div >
       <Flex gap="small">
         <Input.Search placeholder={searchByRoomHint} onSearch={onSearch} />
 

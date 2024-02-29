@@ -28,7 +28,7 @@ export default function BookingManagement() {
   }, []);
 
   return (
-    <div className="container">
+    <div >
       <Flex gap="small">
         <Input
           addonBefore={<SearchOutlined />}

@@ -8,6 +8,7 @@ export const apiPath = {
     getListLocationByPage: "api/vi-tri/phan-trang-tim-kiem",
     getListRoomByPage: "api/phong-thue/phan-trang-tim-kiem",
     login: "api/auth/signin",
-    register: "api/auth/signup"
+    register: "api/auth/signup",
+    getAllLocation: "api/vi-tri",
 
 }

@@ -1,7 +1,16 @@
-import React from 'react'
+import React from "react";
+import ListRoomView from "./components/ListRoomView";
+import LiveEverywhere from "./components/LiveEverywhere";
+import LocationCategory from "./components/LocationCategory";
 
 export default function HomePage() {
   return (
-    <div>HomePage</div>
-  )
+    <div>
+      <LocationCategory />
+      <ListRoomView />
+      <div className="mt-5">
+        <LiveEverywhere />
+      </div>
+    </div>
+  );
 }

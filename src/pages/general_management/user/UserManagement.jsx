@@ -34,7 +34,7 @@ export default function UserManagement() {
   };
 
   return (
-    <div className="container">
+    <div >
       <Flex gap="small">
         <Input.Search placeholder={searchUserHint} onSearch={onSearch} />
 

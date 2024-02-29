@@ -37,7 +37,7 @@ export default function LocationManagement() {
   };
 
   return (
-    <div className="container">
+    <div >
       <Flex gap="small">
         <Input.Search placeholder={searchLocationHint} onSearch={onSearch} />
 

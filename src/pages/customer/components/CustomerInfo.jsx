@@ -1,17 +1,35 @@
 import { Avatar, Button } from "antd";
 import React from "react";
 import { UserOutlined } from "@ant-design/icons";
-import { labelUpdateAvatar } from "../../../constants/constants";
+import { labelEmail, labelConfirmedEmail } from "../../../constants/constants";
 import ListRentedRoom from "./ListRentedRoom";
+import { useSelector } from "react-redux";
 
 export default function CustomerInfo() {
+  const userInfo = useSelector((state) => state.userSlice.user);
+
+  const renderUserInfo = () => {
+    if (userInfo) {
+      return (
+        <div>
+          <h1 className="my-3 text-lg">{userInfo.user.name}</h1>
+          
+          <p>{labelEmail}: {userInfo.user.email}</p>
+        </div>
+      );
+    }
+  };
+
   return (
-    <div className="grid grid-cols-3">
-      <div className="">
-        <Avatar size={100} icon={<UserOutlined />} />
-        <Button type="link">{labelUpdateAvatar}</Button>
+    <div className="flex mt-3">
+      <div className="text-center w-1/5">
+        <div>
+          <Avatar size={100} icon={<UserOutlined />} />
+          <p className="text-sm text-gray-400 mt-1"><i className="fa-solid fa-shield-halved mr-2"></i>{labelConfirmedEmail}</p>
+        </div>
+        {renderUserInfo()}
       </div>
-      <div className="col-span-2">
+      <div className="w-3/4">
         <ListRentedRoom />
       </div>
     </div>

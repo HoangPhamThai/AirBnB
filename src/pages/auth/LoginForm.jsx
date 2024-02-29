@@ -33,12 +33,12 @@ const LoginForm = () => {
 		
 	}).catch(err => {
 		console.log(err)
-		message.success(labelLoginFailure)
+		message.error(labelLoginFailure)
 	})
   };
 
   return (
-    <div className="container text-center">
+    <div className=" text-center">
       <img src={iconLogo} className="h-[200px] mx-auto mt-20" />
       <h1 className="text-3xl font-bold my-10">{labelLogIn}</h1>
 

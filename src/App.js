@@ -14,6 +14,7 @@ import LoginForm from "./pages/auth/LoginForm";
 import RegisterForm from "./pages/auth/RegisterForm";
 
 function App() {
+
   return (
     <>
       <Spinner />

@@ -11,7 +11,6 @@ export default function ListRentedRoom() {
   useEffect(() => {
     getRentedRoomsByUser()
       .then((result) => {
-        console.log(result);
         setListRoom(result);
       })
       .catch((err) => {
@@ -25,7 +24,7 @@ export default function ListRentedRoom() {
 
       {listRoom &&
         listRoom.map((room) => {
-          return <RentedRoom roomInfo={room} />;
+          return <RentedRoom key={room.id} roomInfo={room} />;
         })}
     </div>
   );

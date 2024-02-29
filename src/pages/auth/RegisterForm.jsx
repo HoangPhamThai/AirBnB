@@ -60,7 +60,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="container text-center">
+    <div className=" text-center">
       <img src={iconLogo} className="h-[200px] mx-auto mt-20" />
       <h1 className="text-3xl font-bold my-10">{labelSignUp}</h1>
 
@@ -202,7 +202,7 @@ const RegisterForm = () => {
             htmlType="submit"
             className="bg-slate-800 text-white w-[200px] mt-3"
           >
-            {labelLogIn}
+            {labelSignUp}
           </Button>
         </Form.Item>
       </Form>

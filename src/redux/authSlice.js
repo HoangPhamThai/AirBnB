@@ -1,15 +1,18 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { apiPath } from "../constants/api_path";
-import { keyUserInfo } from "../constants/constants";
-import LoginForm from "../pages/auth/LoginForm";
+import { userInfoKey } from "../constants/constants";
 import { https } from "../services/api";
 
-const initialState = {};
+const initialState = {
+  user: JSON.parse(localStorage.getItem(userInfoKey)),
+};
 
 const authSlice = createSlice({
   name: "authSlice",
   initialState,
-  reducers: {},
+  reducers: {
+    
+  },
 });
 
 export const {} = authSlice.actions;
@@ -21,7 +24,7 @@ export const loginApi = async ({ email, password }) => {
     email: email,
     password: password,
   });
-  localStorage.setItem(keyUserInfo, JSON.stringify(data.content));
+  localStorage.setItem(userInfoKey, JSON.stringify(data.content));
   return data.content;
 };
 
