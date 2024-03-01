@@ -9,6 +9,7 @@ import {
   labelLogOut,
   labelManagement,
   labelSignUp,
+  userInfoKey,
   userRole,
 } from "../constants/constants";
 import { setUser } from "../redux/userSlice";
@@ -23,22 +24,23 @@ export default function UserActionMenu() {
     if (userInfo) {
       return [
         {
-            key: fieldKey.management,
-            label: (
-              <div
-                onClick={() => {
-                  navigate(appPath.generalManagement)
-                }}
-              >
-                {labelManagement}
-              </div>
-            ),
-          },
+          key: fieldKey.management,
+          label: (
+            <div
+              onClick={() => {
+                navigate(appPath.generalManagement);
+              }}
+            >
+              {labelManagement}
+            </div>
+          ),
+        },
         {
           key: fieldKey.logout,
           label: (
             <div
               onClick={() => {
+                localStorage.setItem(userInfoKey, JSON.stringify(""));
                 dispatch(setUser(undefined));
               }}
             >
@@ -78,11 +80,17 @@ export default function UserActionMenu() {
 
   const renderAvatar = () => {
     if (userInfo) {
-      return <Avatar size={30} icon={<UserOutlined />} onClick={() => {
-        if (userInfo.user.role === userRole.user){
-            navigate(appPath.customer)
-        }
-      }} />;
+      return (
+        <Avatar
+          size={30}
+          icon={<UserOutlined />}
+          onClick={() => {
+            if (userInfo.user.role === userRole.user) {
+              navigate(appPath.customer);
+            }
+          }}
+        />
+      );
     }
   };
 

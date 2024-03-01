@@ -4,9 +4,11 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import GuestSelection from "../../components/search_room/GuestSelection";
 import {
+  labelBookingSuccess,
   labelBookRoom,
   labelLeaveDate,
   labelPerNight,
+  labelPleaseLoginFirst,
   labelStartDate,
 } from "../../constants/constants";
 import { bookRoom } from "../../redux/bookingSlice";
@@ -54,21 +56,26 @@ export default function BookRoomPanel({ room }) {
           }
           onClick={() => {
             console.log(userInfo);
-            bookRoom({
-              roomId: room.id,
-              startDate: dates[0],
-              leaveDate: dates[1],
-              totalGuest: guest?.adult + guest?.enfant + guest?.baby,
-              userId: userInfo.user.id,
-            })
-              .then((result) => {
-                console.log(result);
-                message.success(result.message);
+            if (userInfo){
+              bookRoom({
+                roomId: room.id,
+                startDate: dates[0],
+                leaveDate: dates[1],
+                totalGuest: guest?.adult + guest?.enfant + guest?.baby,
+                userId: userInfo?.user?.id,
               })
-              .catch((err) => {
-                console.log(err);
-                message.error(err.message);
-              });
+                .then((result) => {
+                  console.log(result);
+                  message.success(labelBookingSuccess);
+                })
+                .catch((err) => {
+                  console.log(err);
+                  message.error(err.message);
+                });
+            }else{
+              message.error(labelPleaseLoginFirst);
+            }
+            
           }}
         >
           {labelBookRoom}

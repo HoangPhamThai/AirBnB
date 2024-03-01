@@ -19,7 +19,7 @@ export default function Header() {
           navigate(appPath.home);
         }}
       >
-        <img src={airbnbLogo} className="h-[30px]" />
+        <img src='./img/airbnb-logo.png' className="h-[30px]" />
         <div className="ml-3 text-pink-500 text-xl font-bold">
           {labelWebName}
         </div>

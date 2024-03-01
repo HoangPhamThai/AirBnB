@@ -104,6 +104,9 @@ export const labelNumberOfDays = 'Số ngày'
 export const labelNumberOfGuests = 'Số khách'
 export const labelCost = 'Tổng'
 
+export const labelPleaseLoginFirst = "Vui lòng đăng nhập để đặt phòng"
+export const labelBookingSuccess = "Đặt phòng thành công"
+
 export const messages = {
   fieldCannotNull: "Field này không được để trống",
   invalidPassword:

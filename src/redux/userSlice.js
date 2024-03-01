@@ -24,21 +24,14 @@ export const { setUser } = userSlice.actions;
 export default userSlice.reducer;
 
 export const getRentedRoomsByUser = async ({ userId }) => {
-  console.log(userId);
   const { data } = await https.get(apiPath.getRentedRoomByUser + `/${userId}`);
-  console.log(data);
   var listResult = [];
   if (data && data.content) {
-    console.log(data.content);
     for (let item of data.content) {
       const roomDetailResponse = await getRoomDetails(item.maPhong);
-      console.log(roomDetailResponse);
       listResult.push(roomDetailResponse);
-      console.log(listResult);
     }
-    console.log(listResult);
     return listResult;
   }
-  console.log(listResult);
   return listResult;
 };
