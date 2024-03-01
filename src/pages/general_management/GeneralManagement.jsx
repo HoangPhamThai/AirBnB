@@ -28,7 +28,7 @@ export default function GeneralManagement() {
   };
 
   return (
-    <div className="flex ">
+    <div className="flex mt-3">
       <div className="mr-3">
         <SiderMenu setMenu={setMenu} />
       </div>

@@ -25,7 +25,7 @@ export const labelWiFi = "WiFi";
 export const labelKitchen = "Bếp";
 export const labelParkingSlot = "Đậu xe";
 export const labelPool = "Hồ bơi";
-export const labelPerMonth = "/tháng";
+export const labelPerNight = "/đêm";
 export const labelListRentedRoom = "Danh sách phòng đã thuê";
 export const labelAdditionalSerives = "Dịch vụ đi kèm";
 
@@ -93,7 +93,16 @@ export const labelBaby = "Em bé";
 export const labelBelow2 = "Dưới 2 tuổi";
 export const labelPets = "Thú cưng";
 export const labelConfirm = "Xác nhận";
-export const labelConfirmedEmail = "Đã xác minh email"
+export const labelConfirmedEmail = "Đã xác minh email";
+export const labelManagement = "Quản lý";
+export const labelFavorite = "Yêu thích";
+export const labelBookRoom = 'Đặt phòng'
+
+export const labelGuest = 'khách'
+export const labelPet = 'thú cưng'
+export const labelNumberOfDays = 'Số ngày'
+export const labelNumberOfGuests = 'Số khách'
+export const labelCost = 'Tổng'
 
 export const messages = {
   fieldCannotNull: "Field này không được để trống",
@@ -131,6 +140,7 @@ export const fieldKey = {
   login: "login",
   signup: "signup",
   logout: "logout",
+  management: "management",
 };
 
 export const management = {

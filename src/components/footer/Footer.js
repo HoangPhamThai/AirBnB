@@ -3,16 +3,16 @@ import React from "react";
 
 export default function Footer() {
   const renderItem = (label) => {
-    return <p className="py-1 text-gray-500">{label}</p>;
+    return <p className="py-1 text-gray-500 text-sm">{label}</p>;
   };
 
   const renderTitle = (label) => {
-    return <h1 className="font-bold mb-3">{label}</h1>;
+    return <h1 className="font-bold mb-3 text-md">{label}</h1>;
   };
 
   return (
     <div className=" bg-gray-100 py-5 mt-10">
-      <div className="container grid grid-cols-4 mb-10">
+      <div className="container grid grid-cols-4 gap-10 mb-10">
         <div>
           {renderTitle("GIỚI THIỆU")}
           {renderItem("Trang tin tức")}

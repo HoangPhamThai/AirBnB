@@ -1,19 +1,19 @@
 import React from "react";
-import { labelPerMonth, labelRoom } from "../../../constants/constants";
+import { useNavigate } from "react-router-dom";
+import { appPath } from "../../../constants/app_path";
+import { labelPerNight, labelRoom } from "../../../constants/constants";
+import { renderRoomIcon } from "../../../utils/utils";
 
 export default function RoomItem({ room }) {
-  const renderRoomIcon = (icon, value) => {
-    if (value) {
-      return (
-        <span>
-          <i className={icon}></i> {value}{" "}
-        </span>
-      );
-    }
-  };
+  const navigate = useNavigate();
 
   return (
-    <div className="p-2 rounded-lg">
+    <div
+      className="p-2 rounded-lg cursor-pointer"
+      onClick={() => {
+        navigate(appPath.room + `/${room.id}`);
+      }}
+    >
       <img
         src={room.hinhAnh}
         alt="image"
@@ -24,7 +24,7 @@ export default function RoomItem({ room }) {
           <h1 className="font-bold text-slate-800">{room.tenPhong}</h1>
           <p className=" text-blue-800 mt-2">
             <span className="font-bold">${room.giaTien}</span>
-            {labelPerMonth}
+            {labelPerNight}
           </p>
         </div>
         {/* room */}

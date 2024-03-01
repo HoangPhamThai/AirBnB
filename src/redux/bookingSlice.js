@@ -19,3 +19,15 @@ export const getListBooking = async () => {
   console.log(data);
   return data.content;
 };
+
+export const bookRoom = async({roomId, startDate, leaveDate, totalGuest, userId})=>{
+  const {data} = await https.post(apiPath.bookRoom, {
+    maPhong: roomId,
+    ngayDen: startDate,
+    ngayDi: leaveDate,
+    soLuongKhach: totalGuest,
+    maNguoiDung: userId,
+  })
+  console.log(data)
+  return data;
+}

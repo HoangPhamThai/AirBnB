@@ -12,9 +12,9 @@ import UserManagement from "./pages/general_management/user/UserManagement";
 import RoomManagement from "./pages/general_management/room/RoomManagement";
 import LoginForm from "./pages/auth/LoginForm";
 import RegisterForm from "./pages/auth/RegisterForm";
+import RoomDetail from "./pages/room/RoomDetail";
 
 function App() {
-
   return (
     <>
       <Spinner />
@@ -23,22 +23,15 @@ function App() {
           <Route path={appPath.home} element={<Layout />}>
             <Route path={appPath.home} element={<HomePage />} />
             <Route path={appPath.customer} element={<Customer />} />
+            <Route path={appPath.room + "/:roomId"} element={<RoomDetail />} />
             <Route
-              path={appPath.generalManagement.user}
+              path={appPath.generalManagement}
               element={<GeneralManagement />}
-            />
-            <Route
-              path={appPath.generalManagement.user}
-              element={<UserManagement />}
-            />
-            <Route
-              path={appPath.generalManagement.room}
-              element={<RoomManagement />}
             />
           </Route>
 
-          <Route path={appPath.login} element={<LoginForm/>} />
-          <Route path={appPath.register} element={<RegisterForm/>} />
+          <Route path={appPath.login} element={<LoginForm />} />
+          <Route path={appPath.register} element={<RegisterForm />} />
         </Routes>
       </BrowserRouter>
     </>

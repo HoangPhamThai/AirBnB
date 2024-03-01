@@ -2,8 +2,8 @@ import { Button } from "antd";
 import React from "react";
 import { useState } from "react";
 
-export default function IncDec() {
-  const [count, setCount] = useState(0);
+export default function IncDec({ initValue=0, onChanged }) {
+  const [count, setCount] = useState(initValue);
   const [disableDec, setDisableDec] = useState(true);
 
   return (
@@ -12,6 +12,7 @@ export default function IncDec() {
         disabled={disableDec}
         onClick={() => {
           if (!disableDec) {
+            onChanged(count - 1);
             setCount(count - 1);
             if (count === 1) {
               setDisableDec(true);
@@ -25,6 +26,7 @@ export default function IncDec() {
 
       <Button
         onClick={() => {
+          onChanged(count + 1);
           setCount(count + 1);
           if (disableDec) {
             setDisableDec(false);

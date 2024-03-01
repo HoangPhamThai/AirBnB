@@ -7,7 +7,9 @@ import {
   fieldKey,
   labelLogIn,
   labelLogOut,
+  labelManagement,
   labelSignUp,
+  userRole,
 } from "../constants/constants";
 import { setUser } from "../redux/userSlice";
 import { UserOutlined } from "@ant-design/icons";
@@ -20,6 +22,18 @@ export default function UserActionMenu() {
   const renderOptions = () => {
     if (userInfo) {
       return [
+        {
+            key: fieldKey.management,
+            label: (
+              <div
+                onClick={() => {
+                  navigate(appPath.generalManagement)
+                }}
+              >
+                {labelManagement}
+              </div>
+            ),
+          },
         {
           key: fieldKey.logout,
           label: (
@@ -64,7 +78,11 @@ export default function UserActionMenu() {
 
   const renderAvatar = () => {
     if (userInfo) {
-      return <Avatar size={30} icon={<UserOutlined />} onClick={() => {navigate(appPath.customer)}} />;
+      return <Avatar size={30} icon={<UserOutlined />} onClick={() => {
+        if (userInfo.user.role === userRole.user){
+            navigate(appPath.customer)
+        }
+      }} />;
     }
   };
 

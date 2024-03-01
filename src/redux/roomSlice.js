@@ -29,7 +29,12 @@ export const getListRoomByPage = async ({
   return data.content;
 };
 
-export const getRoomDetails = async ({ roomId }) => {
-  const { data } = await https.get(`${apiPath.getRentedRoomByUser}/${roomId}`);
+export const getRoomDetails = async (roomId) => {
+  const { data } = await https.get(`${apiPath.getRoomDetail}/${roomId}`);
+  return data.content;
+};
+
+export const getCommentByRoomId = async ({ roomId }) => {
+  const { data } = await https.get(`${apiPath.getCommentByRoomId}/${roomId}`);
   return data.content;
 };

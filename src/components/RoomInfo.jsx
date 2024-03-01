@@ -7,32 +7,16 @@ import {
   labelKitchen,
   labelLivingRoom,
   labelParkingSlot,
-  labelPerMonth,
+  labelPerNight,
   labelPool,
   labelServices,
   labelTV,
   labelWashingMachine,
   labelWiFi,
 } from "../constants/constants";
+import { renderServiceIcon } from "../utils/utils";
 
 export default function RoomInfo({ room }) {
-  const renderServiceIcon = (icon, value, title) => {
-    if (value) {
-      return (
-        <Tag color="success" className="my-1">
-          {title}
-          <i className={icon + " mx-2"}></i>{" "}
-          <i className="fa-solid fa-check text-green-500"></i>
-        </Tag>
-      );
-    }
-    return (
-      <Tag color="error" className="my-1">
-        {title} <i className={icon + " mx-2"}></i>
-        <i className="fa-solid fa-xmark text-red-500"></i>
-      </Tag>
-    );
-  };
 
   return (
     <div key={room.id}>
@@ -71,7 +55,7 @@ export default function RoomInfo({ room }) {
       </div>
       <div className="font-medium text-md">
         $ {room.giaTien}
-        {labelPerMonth}
+        {labelPerNight}
       </div>
     </div>
   );

@@ -1,15 +1,18 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { labelListRentedRoom } from "../../../constants/constants";
 import { getRentedRoomsByUser } from "../../../redux/userSlice";
 import RentedRoom from "./RentedRoom";
 
 export default function ListRentedRoom() {
+
+  const userInfo = useSelector((state) => state.userSlice.user)
   const [listRoom, setListRoom] = useState([]);
 
   useEffect(() => {
-    getRentedRoomsByUser()
+    getRentedRoomsByUser({userId: userInfo.user.id})
       .then((result) => {
         setListRoom(result);
       })

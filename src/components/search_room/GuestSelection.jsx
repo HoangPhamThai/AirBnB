@@ -11,16 +11,39 @@ import {
   labelConfirm,
   labelEnfant,
   labelFrom2To12,
+  labelGuest,
+  labelPet,
   labelPets,
 } from "../../constants/constants";
 import IncDec from "../IncDec";
 
-export default function GuestSelection() {
+export default function GuestSelection({onChanged}) {
+  const [guest, setGuest] = useState({
+    adult: 1,
+    enfant: 0,
+    baby: 0,
+    pet: 0,
+  });
+
+  const renderGuestDisplay = () => {
+    let totalGuest = guest.adult + guest?.enfant + guest?.baby;
+    let totalPets = guest?.pet;
+    let label = labelAddGuests;
+    if (totalGuest) {
+      label = `${totalGuest} ${labelGuest}`;
+    }
+    if (totalPets) {
+      label += `, ${totalPets} ${labelPet}`;
+    }
+    return label;
+  };
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
     setIsModalOpen(true);
   };
   const handleOk = () => {
+    onChanged(guest)
     setIsModalOpen(false);
   };
   const handleCancel = () => {
@@ -30,7 +53,7 @@ export default function GuestSelection() {
   return (
     <div>
       <Button className="border-none text-[#BFBFBF]" onClick={showModal}>
-        {labelAddGuests}
+        {renderGuestDisplay()}
       </Button>
 
       <Modal
@@ -39,33 +62,70 @@ export default function GuestSelection() {
         onOk={handleOk}
         onCancel={handleCancel}
         footer={null}
+        closeIcon={false}
       >
         <p className="flex items-center mb-2">
           <div className="mr-2 w-3/5">
             <div>{labelAdult}</div>
             <div>{labelAbove13}</div>
           </div>
-          <IncDec className="w-2/5" />
+          <IncDec
+          initValue={guest.adult}
+            className="w-2/5"
+            onChanged={(value) => {
+              setGuest({
+                ...guest,
+                adult: value,
+              });
+            }}
+          />
         </p>
         <p className="flex items-center mb-2">
           <div className="mr-2 w-3/5">
             <div>{labelEnfant}</div>
             <div>{labelFrom2To12}</div>
           </div>
-          <IncDec className="w-2/5" />
+          <IncDec
+          initValue={guest.enfant}
+            className="w-2/5"
+            onChanged={(value) => {
+              setGuest({
+                ...guest,
+                enfant: value,
+              });
+            }}
+          />
         </p>
         <p className="flex items-center mb-2">
           <div className="mr-2 w-3/5">
             <div>{labelBaby}</div>
             <div>{labelBelow2}</div>
           </div>
-          <IncDec className="w-2/5" />
+          <IncDec
+          initValue={guest.baby}
+            className="w-2/5"
+            onChanged={(value) => {
+              setGuest({
+                ...guest,
+                baby: value,
+              });
+            }}
+          />
         </p>
         <p className="flex items-center mb-2">
           <div className="mr-2 w-3/5">{labelPets}</div>
-          <IncDec className="w-2/5" />
+          <IncDec
+          initValue={guest.pet}
+            className="w-2/5"
+            onChanged={(value) => {
+              setGuest({
+                ...guest,
+                pet: value,
+              });
+            }}
+          />
         </p>
-        <div className="text-right">
+        <div className="text-right mt-3">
           <Button className="bg-blue-200 text-black" onClick={handleOk}>
             {labelConfirm}
           </Button>
