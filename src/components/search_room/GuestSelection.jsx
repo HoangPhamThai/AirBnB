@@ -16,7 +16,7 @@ import {
 } from "../../constants/constants";
 import IncDec from "../IncDec";
 
-export default function GuestSelection({onChanged}) {
+export default function GuestSelection({ onChanged }) {
   const [guest, setGuest] = useState({
     adult: 1,
     enfant: 0,
@@ -42,7 +42,10 @@ export default function GuestSelection({onChanged}) {
     setIsModalOpen(true);
   };
   const handleOk = () => {
-    onChanged(guest)
+    if (onChanged) {
+      onChanged(guest);
+    }
+
     setIsModalOpen(false);
   };
   const handleCancel = () => {
@@ -69,7 +72,7 @@ export default function GuestSelection({onChanged}) {
             <div>{labelAbove13}</div>
           </div>
           <IncDec
-          initValue={guest.adult}
+            initValue={guest.adult}
             className="w-2/5"
             onChanged={(value) => {
               setGuest({
@@ -85,7 +88,7 @@ export default function GuestSelection({onChanged}) {
             <div>{labelFrom2To12}</div>
           </div>
           <IncDec
-          initValue={guest.enfant}
+            initValue={guest.enfant}
             className="w-2/5"
             onChanged={(value) => {
               setGuest({
@@ -101,7 +104,7 @@ export default function GuestSelection({onChanged}) {
             <div>{labelBelow2}</div>
           </div>
           <IncDec
-          initValue={guest.baby}
+            initValue={guest.baby}
             className="w-2/5"
             onChanged={(value) => {
               setGuest({
@@ -114,7 +117,7 @@ export default function GuestSelection({onChanged}) {
         <p className="flex items-center mb-2">
           <div className="mr-2 w-3/5">{labelPets}</div>
           <IncDec
-          initValue={guest.pet}
+            initValue={guest.pet}
             className="w-2/5"
             onChanged={(value) => {
               setGuest({
