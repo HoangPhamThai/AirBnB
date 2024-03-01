@@ -46,8 +46,6 @@ export default function UserInfoModal({ label, initValue, onUpdateSuccess, mode 
   };
 
   const onFinish = (values) => {
-    console.log(values);
-    console.log(initValue.key);
     if (mode === "add"){
       addNewUser(values)
       .then((result) => {
