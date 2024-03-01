@@ -16,7 +16,7 @@ export default function ListLocation({ listLocation, onListChanged }) {
       dataIndex: fieldKey.image,
       key: fieldKey.image,
       render: (image) => (
-        <img src={image} alt="image" className="object-cover w-[200px] overflow-hidden"/>
+        <img src={image} alt="" className="object-cover w-[200px] overflow-hidden"/>
       ),
     },
     {

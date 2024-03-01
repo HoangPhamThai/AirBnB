@@ -1,4 +1,4 @@
-import { Avatar, Button } from "antd";
+import { Avatar } from "antd";
 import React from "react";
 import { UserOutlined } from "@ant-design/icons";
 import { labelEmail, labelConfirmedEmail } from "../../../constants/constants";

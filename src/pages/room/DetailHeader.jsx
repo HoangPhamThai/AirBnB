@@ -53,7 +53,7 @@ export default function DetailHeader({ room }) {
     <div>
       <div className="text-xl font-bold">{room.tenPhong}</div>
       {renderEvaluation()}
-      <img src={room.hinhAnh} />
+      <img src={room.hinhAnh} alt='' />
 
       <div className="my-3 grid grid-cols-2">
         <div>

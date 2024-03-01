@@ -16,7 +16,7 @@ export default function ListRoom({ listRoom, onListChanged }) {
       title: labelImage,
       dataIndex: fieldKey.image,
       key: fieldKey.image,
-      render: (image) => <img src={image} alt="image" className="w-[200px]" />,
+      render: (image) => <img src={image} alt="" className="w-[200px]" />,
     },
     {
       title: labelInfo,

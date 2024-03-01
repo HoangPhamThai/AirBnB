@@ -5,7 +5,7 @@ export default function LiveEverywhere() {
 
     const renderItem = (imgSrc, title) => {
         return <div className='text-center'>
-        <img src={imgSrc} className='rounded-lg h-[250px] w-full'/>
+        <img src={imgSrc} className='rounded-lg h-[250px] w-full' alt=''/>
         <h1 className='mt-2'>{title}</h1>
     </div>
     }

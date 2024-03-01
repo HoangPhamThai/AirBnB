@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { apiPath } from "../constants/api_path";
 import { userInfoKey } from "../constants/constants";
 import { https } from "../services/api";
@@ -10,9 +10,7 @@ const initialState = {
 const authSlice = createSlice({
   name: "authSlice",
   initialState,
-  reducers: {
-    
-  },
+  reducers: {},
 });
 
 export const {} = authSlice.actions;

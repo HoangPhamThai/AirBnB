@@ -1,5 +1,4 @@
-import { Button, Dropdown, Menu } from "antd";
-import MenuItem from "antd/es/menu/MenuItem";
+import { Button, Dropdown } from "antd";
 import React from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
@@ -27,6 +26,7 @@ export default function LocationSelection() {
             <img
               src={location.hinhAnh}
               className="mr-2 w-[40px] h-[30px] rounded-lg"
+              alt=''
             />
             <h1>
               {location.tenViTri}, {location.tinhThanh}, {location.quocGia}

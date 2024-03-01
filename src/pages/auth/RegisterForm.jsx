@@ -8,9 +8,6 @@ import {
   labelEmail,
   labelFemale,
   labelGender,
-  labelLogIn,
-  labelLoginFailure,
-  labelLoginSuccess,
   labelMale,
   labelName,
   labelPassword,
@@ -18,15 +15,14 @@ import {
   labelSignUp,
   messages,
 } from "../../constants/constants";
-import { loginApi, registerApi } from "../../redux/authSlice";
+import { registerApi } from "../../redux/authSlice";
 import { useNavigate } from "react-router-dom";
 import { appPath } from "../../constants/app_path";
-import { useDispatch } from "react-redux";
-import { setUser } from "../../redux/userSlice";
+
+const { Option } = Select;
 
 const RegisterForm = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const config = {
     rules: [

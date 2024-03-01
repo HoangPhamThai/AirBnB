@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useSelector } from "react-redux";
 import { labelListRoom } from "../../../constants/constants";
 import { getListRoomByPage } from "../../../redux/roomSlice";
 import CustomPagination from "../../general_management/components/CustomPagination";

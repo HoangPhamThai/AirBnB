@@ -16,7 +16,7 @@ export default function RoomItem({ room }) {
     >
       <img
         src={room.hinhAnh}
-        alt="image"
+        alt=""
         className="h-[200px] w-full rounded-lg"
       />
       <div className="bg-white rounded-lg py-2 mt-2 text-sm ">

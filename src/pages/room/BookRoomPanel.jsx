@@ -67,7 +67,7 @@ export default function BookRoomPanel({ room }) {
               })
               .catch((err) => {
                 console.log(err);
-                message.error(result.message);
+                message.error(err.message);
               });
           }}
         >
