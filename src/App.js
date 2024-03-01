@@ -10,6 +10,7 @@ import GeneralManagement from "./pages/general_management/GeneralManagement";
 import LoginForm from "./pages/auth/LoginForm";
 import RegisterForm from "./pages/auth/RegisterForm";
 import RoomDetail from "./pages/room/RoomDetail";
+import AuthGate from "./template/AuthGate";
 
 function App() {
   return (
@@ -23,7 +24,11 @@ function App() {
             <Route path={appPath.room + "/:roomId"} element={<RoomDetail />} />
             <Route
               path={appPath.generalManagement}
-              element={<GeneralManagement />}
+              element={
+                <AuthGate>
+                  <GeneralManagement />
+                </AuthGate>
+              }
             />
           </Route>
 

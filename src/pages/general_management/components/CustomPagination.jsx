@@ -12,7 +12,8 @@ export default function CustomPagination({
 }) {
   const maxPageNumber = Math.ceil(totalRow / pageSize);
   const renderListPageNumber = () => {
-    const defaultLengthPage = 2 * deltaPage + 1;
+    
+    const defaultLengthPage = Math.min(maxPageNumber, 2 * deltaPage + 1);
     const end =
       currentPage + deltaPage <= maxPageNumber
         ? currentPage + deltaPage < defaultLengthPage

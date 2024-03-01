@@ -29,11 +29,25 @@ export const getListUserByPage = async ({pageId, keyword='', pageSize=10}) => {
 
 export const deleteUser = async (userId) => {
     console.log(userId)
-    const {response} = await https.delete(apiPath.userManagement, {
+    const response = await https.delete(apiPath.userManagement, {
         params: {
             id: userId
         }
     })
     console.log(response)
     return response.message
+}
+
+export const addNewUser = async ({name, email, password, phone, birthday, gender, role}) =>{
+    const response = await https.post(apiPath.userManagement, {
+        name, email, password, phone, birthday, gender, role
+    })
+    return response.data
+}
+
+export const updateUser = async ({id, name, email, password, phone, birthday, gender, role}) =>{
+    const response = await https.put(apiPath.userManagement + `/${id}`, {
+        name, email, password, phone, birthday, gender, role
+    })
+    return response.data
 }

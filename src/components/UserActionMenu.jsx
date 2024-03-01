@@ -42,6 +42,7 @@ export default function UserActionMenu() {
               onClick={() => {
                 localStorage.setItem(userInfoKey, JSON.stringify(""));
                 dispatch(setUser(undefined));
+                navigate(appPath.home);
               }}
             >
               {labelLogOut}

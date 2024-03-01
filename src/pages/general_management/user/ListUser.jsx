@@ -8,10 +8,12 @@ import {
   labelEdit,
   labelEmail,
   labelRole,
+  mode,
   userRole,
 } from "../../../constants/constants";
 import { UserOutlined } from "@ant-design/icons";
 import { deleteUser } from "../../../redux/managementSlice";
+import UserInfoModal from "./UserInfoModal";
 
 export default function ListUser({ listUser, onListChanged }) {
   const columns = [
@@ -45,11 +47,21 @@ export default function ListUser({ listUser, onListChanged }) {
       key: fieldKey.action,
       render: (_, record) => (
         <Space>
-          {record.role === userRole.admin && (
-            <Button className="text-blue-600" onClick={() => {}}>
-              {labelEdit}
-            </Button>
-          )}
+          <UserInfoModal
+            mode={mode.edit}
+            label={labelEdit}
+            onUpdateSuccess={onListChanged}
+            initValue={{
+              key: record.key,
+              avatar: record.avatar,
+              name: record.name,
+              email: record.email,
+              role: record.role,
+              phone: record.phone,
+              gender: record.gender,
+              password: record.password,
+            }}
+          />
 
           <Button
             danger={true}
@@ -79,6 +91,9 @@ export default function ListUser({ listUser, onListChanged }) {
           name: user.name,
           email: user.email,
           role: user.role,
+          phone: user.phone,
+          gender: user.gender,
+          password: user.password,
         };
       });
     }

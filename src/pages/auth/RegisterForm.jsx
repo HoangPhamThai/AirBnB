@@ -29,7 +29,7 @@ const RegisterForm = () => {
       {
         type: "object",
         required: true,
-        message: message.fieldCannotNull,
+        message: messages.fieldCannotNull,
       },
     ],
   };

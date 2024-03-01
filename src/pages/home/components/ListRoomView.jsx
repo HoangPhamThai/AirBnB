@@ -30,7 +30,7 @@ export default function ListRoomView() {
     return (
       <div className="grid grid-cols-4 gap-2 mb-3">
         {listRoom.map((room) => {
-          return <RoomItem room={room} key={room.id}/>;
+          return <RoomItem room={room} key={room.id} />;
         })}
       </div>
     );

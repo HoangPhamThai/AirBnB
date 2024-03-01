@@ -1,5 +1,8 @@
 export const userInfoKey = "USER_INFOR";
-
+export const mode = {
+  add: "add",
+  edit: "edit",
+};
 export const userRole = {
   admin: "ADMIN",
   user: "USER",
@@ -45,7 +48,7 @@ export const labelName = "Tên";
 export const labelEmail = "Email";
 export const labelAvatar = "Avatar";
 export const labelGender = "Giới tính";
-export const labelRole = "Vị trí";
+export const labelRole = "Quyền";
 export const labelAction = "Hành động";
 
 export const labelDelete = "Xoá";
@@ -96,16 +99,17 @@ export const labelConfirm = "Xác nhận";
 export const labelConfirmedEmail = "Đã xác minh email";
 export const labelManagement = "Quản lý";
 export const labelFavorite = "Yêu thích";
-export const labelBookRoom = 'Đặt phòng'
+export const labelBookRoom = "Đặt phòng";
 
-export const labelGuest = 'khách'
-export const labelPet = 'thú cưng'
-export const labelNumberOfDays = 'Số ngày'
-export const labelNumberOfGuests = 'Số khách'
-export const labelCost = 'Tổng'
-
-export const labelPleaseLoginFirst = "Vui lòng đăng nhập để đặt phòng"
-export const labelBookingSuccess = "Đặt phòng thành công"
+export const labelGuest = "khách";
+export const labelPet = "thú cưng";
+export const labelNumberOfDays = "Số ngày";
+export const labelNumberOfGuests = "Số khách";
+export const labelCost = "Tổng";
+export const labelAddNewUserSuccess = "Thêm người dùng mới thành công";
+export const labelPleaseLoginFirst = "Vui lòng đăng nhập để đặt phòng";
+export const labelBookingSuccess = "Đặt phòng thành công";
+export const labelEditSuccess = "Sửa thông tin thành công"
 
 export const messages = {
   fieldCannotNull: "Field này không được để trống",
