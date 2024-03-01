@@ -22,19 +22,7 @@ export default function UserActionMenu() {
 
   const renderOptions = () => {
     if (userInfo) {
-      return [
-        {
-          key: fieldKey.management,
-          label: (
-            <div
-              onClick={() => {
-                navigate(appPath.generalManagement);
-              }}
-            >
-              {labelManagement}
-            </div>
-          ),
-        },
+      let defaultAction = [
         {
           key: fieldKey.logout,
           label: (
@@ -50,6 +38,24 @@ export default function UserActionMenu() {
           ),
         },
       ];
+      if (userInfo.user.role === userRole.admin) {
+        defaultAction = [
+          {
+            key: fieldKey.management,
+            label: (
+              <div
+                onClick={() => {
+                  navigate(appPath.generalManagement);
+                }}
+              >
+                {labelManagement}
+              </div>
+            ),
+          },
+          ...defaultAction,
+        ];
+      }
+      return defaultAction;
     }
     return [
       {
