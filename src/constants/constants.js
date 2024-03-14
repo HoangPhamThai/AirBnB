@@ -119,6 +119,7 @@ export const labelLocationName = "Vị trí";
 export const labelProvince = "Tỉnh thành";
 export const labelCountry = "Quốc gia";
 
+
 export const messages = {
   fieldCannotNull: "Field này không được để trống",
   invalidPassword:
@@ -127,6 +128,10 @@ export const messages = {
   notMatchPassword: "The password does not match",
   selectGender: "Chọn giới tính",
   selectBirthday: "Chọn ngày sinh",
+  success: {
+    newLocation: "Thêm vị trí mới thành công",
+    newRoom: "Thêm phòng mới thành công"
+  }
 };
 
 export const fieldKey = {
