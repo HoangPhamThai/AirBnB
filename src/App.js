@@ -11,6 +11,7 @@ import LoginForm from "./pages/auth/LoginForm";
 import RegisterForm from "./pages/auth/RegisterForm";
 import RoomDetail from "./pages/room/RoomDetail";
 import AuthGate from "./template/AuthGate";
+import ListRoomByLocation from "./pages/location/ListRoomByLocation";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path={appPath.home} element={<HomePage />} />
             <Route path={appPath.customer} element={<Customer />} />
             <Route path={appPath.room + "/:roomId"} element={<RoomDetail />} />
+            <Route path={appPath.location + "/:locationId"} element={<ListRoomByLocation/>}/>
             <Route
               path={appPath.generalManagement}
               element={

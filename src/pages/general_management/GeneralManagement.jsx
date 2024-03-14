@@ -32,8 +32,11 @@ export default function GeneralManagement() {
       <div className="mr-3">
         <SiderMenu setMenu={setMenu} />
       </div>
-
+      <div className="w-full">
       {renderMenuContent()}
+      </div>
+
+      
     </div>
   );
 }

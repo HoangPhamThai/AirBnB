@@ -26,3 +26,13 @@ export const getListLocationByPage = async ({pageId, keyword='', pageSize = 10})
     })
     return data.content
 }
+
+export const getListRoomByLocation = async ({locationId}) => {
+    console.log(locationId)
+    const {data} = await https.get(apiPath.getListRoomByLocation, {
+        params: {
+            maViTri: locationId
+        }
+    })
+    return data.content
+}

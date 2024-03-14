@@ -5,5 +5,6 @@ export const appPath = {
   admin: "admin",
   customer: "/customer",
   room: "/room",
-  generalManagement: "/management"
+  generalManagement: "/management",
+  location: "/location",
 };

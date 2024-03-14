@@ -2,17 +2,19 @@ import { Carousel } from "antd";
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { appPath } from "../../../constants/app_path";
 import { labelExploreDestination } from "../../../constants/constants";
 import { getLocationMetadata } from "../../../redux/metadataSlice";
 
 export default function LocationCategory() {
+  const navigate = useNavigate();
   const maxItemInCarousel = 8;
-  const dispatch = useDispatch()
-  const listLocation = useSelector(state => state.metadataSlice.listLocation)
-
+  const dispatch = useDispatch();
+  const listLocation = useSelector((state) => state.metadataSlice.listLocation);
 
   useEffect(() => {
-    dispatch(getLocationMetadata())
+    dispatch(getLocationMetadata());
   }, []);
 
   const renderGroupItem = (listItem) => {
@@ -20,7 +22,13 @@ export default function LocationCategory() {
       <div className=" grid grid-cols-4 mb-2">
         {listItem.map((item) => {
           return (
-            <div className="flex p-2 rounded-md" key={item.id}>
+            <div
+              className="flex p-2 rounded-md cursor-pointer"
+              key={item.id}
+              onClick={() => {
+                window.location.href = `${appPath.location}/${item.id}`;
+              }}
+            >
               <img
                 src={item.hinhAnh}
                 className="mr-2 w-[40px] h-[30px] rounded-lg"

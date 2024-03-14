@@ -51,3 +51,34 @@ export const updateUser = async ({id, name, email, password, phone, birthday, ge
     })
     return response.data
 }
+
+export const addNewLocation = async ({locationName, province, country, image}) =>{
+    const response = await https.post(apiPath.locationManagement, {
+        tenViTri: locationName,
+        tinhThanh: province,
+        quocGia: country,
+        hinhAnh: image
+    })
+    return response.data
+}
+
+export const updateLocation = async ({id, locationName, province, country, image}) =>{
+    const response = await https.put(apiPath.locationManagement + `/${id}`, {
+        tenViTri: locationName,
+        tinhThanh: province,
+        quocGia: country,
+        hinhAnh: image
+    })
+    return response.data
+}
+
+export const deleteLocation = async (id) => {
+    
+    const response = await https.delete(apiPath.locationManagement, {
+        params: {
+            id
+        }
+    })
+    console.log(response)
+    return response.message
+}

@@ -1,4 +1,4 @@
-import { Tag } from "antd";
+import { Image, Tag } from "antd";
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,6 +15,7 @@ import {
   labelTV,
   labelWashingMachine,
   labelWiFi,
+  labelBed,
 } from "../../constants/constants";
 import { getLocationMetadata } from "../../redux/metadataSlice";
 import {
@@ -53,7 +54,7 @@ export default function DetailHeader({ room }) {
     <div>
       <div className="text-xl font-bold">{room.tenPhong}</div>
       {renderEvaluation()}
-      <img src={room.hinhAnh} alt='' />
+      <Image src={room.hinhAnh} alt='' />
 
       <div className="my-3 grid grid-cols-2">
         <div>
@@ -62,6 +63,9 @@ export default function DetailHeader({ room }) {
           </Tag>
           <Tag color="#108ee9">
             {labelBedRoom} {renderRoomIcon("fa-solid fa-bed", room.phongNgu)}
+          </Tag>
+          <Tag color="#108ee9">
+            {labelBed} {renderRoomIcon("fa-solid fa-mattress-pillow", room.giuong)}
           </Tag>
           <Tag color="#108ee9">
             {labelBathRoom}{" "}

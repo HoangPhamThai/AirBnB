@@ -5,10 +5,12 @@ import CustomPagination from "../components/CustomPagination";
 import { useState } from "react";
 import {
   labelAddNewRoom,
+  mode,
   searchByRoomHint,
 } from "../../../constants/constants";
 import { getListRoomByPage } from "../../../redux/roomSlice";
 import { useEffect } from "react";
+import RoomInfoModal from "./RoomInfoModal";
 
 export default function RoomManagement() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -41,9 +43,9 @@ export default function RoomManagement() {
       <Flex gap="small">
         <Input.Search placeholder={searchByRoomHint} onSearch={onSearch} />
 
-        <Button className="border-blue-600 text-blue-700">
-          {labelAddNewRoom}
-        </Button>
+        <RoomInfoModal onUpdateSuccess={()=>{
+          updateListRoom({pageId:1})
+        }} label={labelAddNewRoom} mode={mode.add}/>
       </Flex>
 
       <div className="my-3">

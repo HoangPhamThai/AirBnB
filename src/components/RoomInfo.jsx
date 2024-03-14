@@ -3,6 +3,7 @@ import React from "react";
 import {
   labelAirConditioner,
   labelBathRoom,
+  labelBed,
   labelBedRoom,
   labelKitchen,
   labelLivingRoom,
@@ -23,7 +24,7 @@ export default function RoomInfo({ room }) {
       <div className="text-lg font-bold mb-3">{room.tenPhong}</div>
       <div className="mb-2">
         {labelLivingRoom}: {room.khach} - {labelBedRoom}: {room.phongNgu} -{" "}
-        {labelBathRoom}: {room.phongTam}
+        {labelBathRoom}: {room.phongTam} -{" "} {labelBed}: {room.giuong}
       </div>
       <div className="mb-5">
         <p>{labelServices}:</p>

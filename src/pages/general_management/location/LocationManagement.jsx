@@ -4,11 +4,13 @@ import { useEffect } from "react";
 import { useState } from "react";
 import {
   labelAddNewLocation,
+  mode,
   searchLocationHint,
 } from "../../../constants/constants";
 import { getListLocationByPage } from "../../../redux/locationSlice";
 import ListLocation from "./ListLocation";
 import CustomPagination from "../components/CustomPagination";
+import LocationInfoModal from "./LocationInfoModal";
 
 export default function LocationManagement() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -41,9 +43,10 @@ export default function LocationManagement() {
       <Flex gap="small">
         <Input.Search placeholder={searchLocationHint} onSearch={onSearch} />
 
-        <Button className="border-blue-600 text-blue-700">
-          {labelAddNewLocation}
-        </Button>
+        
+        <LocationInfoModal onUpdateSuccess={()=>{
+          updateListLocation({pageId: 1})
+        }} label={labelAddNewLocation} mode={mode.add}/>
       </Flex>
 
       <div className="my-3">

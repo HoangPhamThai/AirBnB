@@ -15,6 +15,8 @@ export const authType = {
 
 export const labelWebName = "airbnb";
 
+export const labelRoomName = "Tên phòng";
+export const labelRoomDescription = "Mô tả";
 export const labelUpdateAvatar = "Cập nhật ảnh";
 export const labelLivingRoom = "Phòng khách";
 export const labelBedRoom = "Phòng ngủ";
@@ -31,6 +33,7 @@ export const labelPool = "Hồ bơi";
 export const labelPerNight = "/đêm";
 export const labelListRentedRoom = "Danh sách phòng đã thuê";
 export const labelAdditionalSerives = "Dịch vụ đi kèm";
+export const labelLocationId = "Mã vị trí"
 
 export const labelAddNewUser = "Thêm người dùng";
 export const searchUserHint = "Nhập tên người dùng";
@@ -50,6 +53,7 @@ export const labelAvatar = "Avatar";
 export const labelGender = "Giới tính";
 export const labelRole = "Quyền";
 export const labelAction = "Hành động";
+export const labelPrice = "Giá tiền"
 
 export const labelDelete = "Xoá";
 export const labelEdit = "Sửa";
@@ -100,6 +104,7 @@ export const labelConfirmedEmail = "Đã xác minh email";
 export const labelManagement = "Quản lý";
 export const labelFavorite = "Yêu thích";
 export const labelBookRoom = "Đặt phòng";
+export const labelEditProfile = "Chỉnh sửa thông tin";
 
 export const labelGuest = "khách";
 export const labelPet = "thú cưng";
@@ -109,7 +114,10 @@ export const labelCost = "Tổng";
 export const labelAddNewUserSuccess = "Thêm người dùng mới thành công";
 export const labelPleaseLoginFirst = "Vui lòng đăng nhập để đặt phòng";
 export const labelBookingSuccess = "Đặt phòng thành công";
-export const labelEditSuccess = "Sửa thông tin thành công"
+export const labelEditSuccess = "Sửa thông tin thành công";
+export const labelLocationName = "Vị trí";
+export const labelProvince = "Tỉnh thành";
+export const labelCountry = "Quốc gia";
 
 export const messages = {
   fieldCannotNull: "Field này không được để trống",
@@ -148,6 +156,29 @@ export const fieldKey = {
   signup: "signup",
   logout: "logout",
   management: "management",
+  locationName: "tenViTri",
+  province: "tinhThanh",
+  country: "quocGia",
+  locationImage: "hinhAnh",
+  room: {
+    name: "tenPhong",
+    living: "khach",
+    bedroom: "phongNgu",
+    bed: "giuong",
+    bathroom: "phongTam",
+    desc: "moTa",
+    price: "giaTien",
+    washingMachine: "mayGiat",
+    iron: "banLa",
+    tv: "tivi",
+    airCond: "dieuHoa",
+    wifi: "wifi",
+    kitchen: "bep",
+    parking: "doXe",
+    pool: "hoBoi",
+    locationId: "maViTri",
+    image: "hinhAnh",
+  },
 };
 
 export const management = {

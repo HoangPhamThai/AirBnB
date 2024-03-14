@@ -29,9 +29,10 @@ export default function RoomItem({ room }) {
         </div>
         {/* room */}
         <p className="mt-2">
-          <span className="mr-1">{labelRoom}:</span>
+          <span className="mr-2">{labelRoom}</span>
           {renderRoomIcon("fas fa-couch", room.khach)}
           {renderRoomIcon("fa-solid fa-bed", room.phongNgu)}
+          {renderRoomIcon("fa-solid fa-mattress-pillow", room.giuong)}
           {renderRoomIcon("fa-solid fa-shower", room.phongTam)}
         </p>
       </div>

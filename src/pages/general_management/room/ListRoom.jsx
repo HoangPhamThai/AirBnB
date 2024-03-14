@@ -1,4 +1,4 @@
-import { Button, Space, Table } from "antd";
+import { Button, Image, Space, Table } from "antd";
 import React from "react";
 import RoomInfo from "../../../components/RoomInfo";
 import {
@@ -16,7 +16,7 @@ export default function ListRoom({ listRoom, onListChanged }) {
       title: labelImage,
       dataIndex: fieldKey.image,
       key: fieldKey.image,
-      render: (image) => <img src={image} alt="" className="w-[200px]" />,
+      render: (image) => <Image width={250} height={150} src={image} alt="" />,
     },
     {
       title: labelInfo,

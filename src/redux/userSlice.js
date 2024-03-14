@@ -35,3 +35,14 @@ export const getRentedRoomsByUser = async ({ userId }) => {
   }
   return listResult;
 };
+
+export const uploadAvatar = async ({url, token}) =>{
+  console.log(url, token);
+  const {data} = await https.post(apiPath.uploadAvatar, {
+    token,
+    formFile: url
+  })
+  console.log(data)
+  return data.content
+
+}
