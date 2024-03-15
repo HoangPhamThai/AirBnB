@@ -5,7 +5,7 @@ import { userInfoKey, userRole } from "../constants/constants";
 export default function AuthGate({ children }) {
   let userInfo = localStorage.getItem(userInfoKey);
   let user = JSON.parse(userInfo);
-  if (!user || user.user.role !== userRole.admin) {
+  if (!user || user.user.role !== userRole.user) {
     window.location.href = appPath.login;
   }
   return children;
