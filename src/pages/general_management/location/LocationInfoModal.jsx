@@ -1,7 +1,7 @@
 import { Button, Form, Input, message, Modal } from 'antd';
 import React from 'react'
 import { useState } from 'react';
-import { fieldKey, labelAddNewLocation, labelCountry, labelEditSuccess, labelImage, labelLocationName, labelName, labelProvince, messages } from '../../../constants/constants';
+import { fieldKey, labelCountry, labelEditSuccess, labelImage, labelLocationName, labelProvince, messages } from '../../../constants/constants';
 import { addNewLocation, updateLocation } from '../../../redux/managementSlice';
 
 export default function LocationInfoModal({ label, initValue, onUpdateSuccess, mode }) {

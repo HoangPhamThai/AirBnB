@@ -3,6 +3,8 @@ export const apiPath = {
   getListUserByPage: "api/users/phan-trang-tim-kiem",
   userManagement: "api/users",
   locationManagement: "api/vi-tri",
+  roomManagement: "api/phong-thue",
+  bookingManagement: "api/dat-phong",
   getListBooking: "api/dat-phong",
   bookRoom: "api/dat-phong",
   getListLocationByPage: "api/vi-tri/phan-trang-tim-kiem",

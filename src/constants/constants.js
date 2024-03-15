@@ -118,6 +118,7 @@ export const labelEditSuccess = "Sửa thông tin thành công";
 export const labelLocationName = "Vị trí";
 export const labelProvince = "Tỉnh thành";
 export const labelCountry = "Quốc gia";
+export const labelGuestId = "Mã người dùng"
 
 
 export const messages = {
@@ -184,6 +185,14 @@ export const fieldKey = {
     locationId: "maViTri",
     image: "hinhAnh",
   },
+  booking: {
+    id: "id",
+    roomId: "maPhong",
+    startDate: "ngayDen",
+    leaveDate: "ngayDi",
+    totalGuest: "soLuongKhach",
+    guestId: "maNguoiDung"
+  }
 };
 
 export const management = {

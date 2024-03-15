@@ -1,4 +1,12 @@
-import { Button, Checkbox, Flex, Form, Input, InputNumber, Modal } from "antd";
+import {
+  Button,
+  Checkbox,
+  Form,
+  Input,
+  InputNumber,
+  message,
+  Modal,
+} from "antd";
 import React from "react";
 import { useState } from "react";
 import {
@@ -7,13 +15,14 @@ import {
   labelBathRoom,
   labelBed,
   labelBedRoom,
-  labelCost,
+
+  labelEditSuccess,
   labelImage,
   labelIron,
   labelKitchen,
   labelLivingRoom,
   labelLocationId,
-  labelLocationName,
+  
   labelParkingSlot,
   labelPool,
   labelPrice,
@@ -24,6 +33,7 @@ import {
   labelWiFi,
   messages,
 } from "../../../constants/constants";
+import { addNewRoom, updateRoom } from "../../../redux/managementSlice";
 
 export default function RoomInfoModal({
   label,
@@ -48,7 +58,27 @@ export default function RoomInfoModal({
   const onFinish = (values) => {
     console.log(values);
     if (mode === "add") {
+      addNewRoom(values)
+        .then((res) => {
+          console.log(res);
+          message.success(messages.success.newRoom);
+          handleOk();
+          onUpdateSuccess();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     } else if (mode === "edit") {
+        updateRoom({...values, id: initValue.key})
+      .then((result) => {
+        console.log(result);
+        message.success(labelEditSuccess)
+        handleOk()
+        onUpdateSuccess()
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     }
   };
 
@@ -213,7 +243,6 @@ export default function RoomInfoModal({
                 name={fieldKey.room.washingMachine}
                 labelCol={{ span: 12 }}
                 valuePropName="checked"
-                
               >
                 <Checkbox />
               </Form.Item>

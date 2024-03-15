@@ -8,7 +8,10 @@ import {
   labelEdit,
   labelImage,
   labelInfo,
+  mode,
 } from "../../../constants/constants";
+import { deleteRoom } from "../../../redux/managementSlice";
+import RoomInfoModal from "./RoomInfoModal";
 
 export default function ListRoom({ listRoom, onListChanged }) {
   const columns = [
@@ -31,11 +34,45 @@ export default function ListRoom({ listRoom, onListChanged }) {
       key: fieldKey.action,
       render: (_, record) => (
         <Space>
-          <Button className="text-blue-600" onClick={() => {}}>
-            {labelEdit}
-          </Button>
+          <RoomInfoModal
+            mode={mode.edit}
+            label={labelEdit}
+            onUpdateSuccess={onListChanged}
+            initValue={{
+              id: record.key,
+              tenPhong: record.info.tenPhong,
+              khach: record.info.khach,
+              phongNgu: record.info.phongNgu,
+              giuong: record.info.giuong,
+              phongTam: record.info.phongTam,
+              moTa: record.info.moTa,
+              giaTien: record.info.giaTien,
+              mayGiat: record.info.mayGiat,
+              banLa: record.info.banLa,
+              tivi: record.info.tivi,
+              dieuHoa: record.info.dieuHoa,
+              wifi: record.info.wifi,
+              bep: record.info.bep,
+              doXe: record.info.doXe,
+              hoBoi: record.info.hoBoi,
+              maViTri: record.info.maViTri,
+              hinhAnh: record.image,
+            }}
+          />
 
-          <Button danger={true} onClick={() => {}}>
+          <Button
+            danger={true}
+            onClick={() => {
+              deleteRoom(record.key)
+                .then((res) => {
+                  console.log(res);
+                  onListChanged();
+                })
+                .catch((err) => {
+                  console.log(err);
+                });
+            }}
+          >
             {labelDelete}
           </Button>
         </Space>

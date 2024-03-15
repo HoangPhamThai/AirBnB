@@ -1,14 +1,16 @@
-import { Button, Flex, Input } from "antd";
+import { Flex, Input } from "antd";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import {
   labelAddNewBooking,
+  mode,
   searchByUserIdHint,
 } from "../../../constants/constants";
 import { getListBooking } from "../../../redux/bookingSlice";
 import ListBooking from "./ListBooking";
 import { SearchOutlined } from "@ant-design/icons";
+import BookingInfoModal from "./BookingInfoModal";
 
 export default function BookingManagement() {
   const [listBooking, setListBooking] = useState([]);
@@ -35,9 +37,10 @@ export default function BookingManagement() {
           placeholder={searchByUserIdHint}
         />
 
-        <Button className="border-blue-600 text-blue-700">
-          {labelAddNewBooking}
-        </Button>
+        <BookingInfoModal onUpdateSuccess={()=>{
+          updateListBooking()
+        }} label={labelAddNewBooking} mode={mode.add}
+        />
       </Flex>
 
       <div className="my-3">

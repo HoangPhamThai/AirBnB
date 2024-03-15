@@ -14,6 +14,7 @@ import {
 import { UserOutlined } from "@ant-design/icons";
 import { deleteUser } from "../../../redux/managementSlice";
 import UserInfoModal from "./UserInfoModal";
+import moment from "moment";
 
 export default function ListUser({ listUser, onListChanged }) {
   const columns = [
@@ -45,40 +46,42 @@ export default function ListUser({ listUser, onListChanged }) {
     {
       title: labelAction,
       key: fieldKey.action,
-      render: (_, record) => (
-        <Space>
-          <UserInfoModal
-            mode={mode.edit}
-            label={labelEdit}
-            onUpdateSuccess={onListChanged}
-            initValue={{
-              key: record.key,
-              avatar: record.avatar,
-              name: record.name,
-              email: record.email,
-              role: record.role,
-              phone: record.phone,
-              gender: record.gender,
-              password: record.password,
-            }}
-          />
+      render: (_, record) => {
+        return (
+          <Space>
+            <UserInfoModal
+              mode={mode.edit}
+              label={labelEdit}
+              onUpdateSuccess={onListChanged}
+              initValue={{
+                key: record.key,
+                avatar: record.avatar,
+                name: record.name,
+                email: record.email,
+                role: record.role,
+                phone: record.phone,
+                gender: record.gender,
+                password: record.password,
+              }}
+            />
 
-          <Button
-            danger={true}
-            onClick={() => {
-              deleteUser(record.key)
-                .then((result) => {
-                  onListChanged();
-                })
-                .catch((err) => {
-                  console.log(err);
-                });
-            }}
-          >
-            {labelDelete}
-          </Button>
-        </Space>
-      ),
+            <Button
+              danger={true}
+              onClick={() => {
+                deleteUser(record.key)
+                  .then((result) => {
+                    onListChanged();
+                  })
+                  .catch((err) => {
+                    console.log(err);
+                  });
+              }}
+            >
+              {labelDelete}
+            </Button>
+          </Space>
+        );
+      },
     },
   ];
 

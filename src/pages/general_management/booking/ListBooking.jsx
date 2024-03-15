@@ -1,4 +1,5 @@
 import { Button, Space, Table } from "antd";
+import moment from "moment";
 import React from "react";
 import {
   fieldKey,
@@ -7,10 +8,14 @@ import {
   labelDelete,
   labelEdit,
   labelLeaveDate,
+  labelNumberOfGuests,
   labelRoomId,
   labelStartDate,
+  mode,
 } from "../../../constants/constants";
+import { deleteBooking } from "../../../redux/managementSlice";
 import { toDateAndTime } from "../../../utils/utils";
+import BookingInfoModal from "./BookingInfoModal";
 
 export default function ListBooking({ listBooking, onListChanged }) {
   const columns = [
@@ -18,9 +23,16 @@ export default function ListBooking({ listBooking, onListChanged }) {
       title: labelBookingId,
       dataIndex: fieldKey.bookingId,
       key: fieldKey.bookingId,
-      render: (bookingId)=><a className="text-blue-500" onClick={()=>{
-        console.log(bookingId)
-      }}>{bookingId}</a>
+      render: (bookingId) => (
+        <a
+          className="text-blue-500"
+          onClick={() => {
+            console.log(bookingId);
+          }}
+        >
+          {bookingId}
+        </a>
+      ),
     },
     {
       title: labelRoomId,
@@ -38,15 +50,42 @@ export default function ListBooking({ listBooking, onListChanged }) {
       key: fieldKey.leaveDate,
     },
     {
+      title: labelNumberOfGuests,
+      dataIndex: fieldKey.guestNumber,
+      key: fieldKey.guestNumber,
+    },
+    {
       title: labelAction,
       key: fieldKey.role,
       render: (_, record) => (
         <Space>
-          <Button className="text-blue-600" onClick={() => {}}>
-            {labelEdit}
-          </Button>
+          <BookingInfoModal
+            mode={mode.edit}
+            label={labelEdit}
+            onUpdateSuccess={onListChanged}
+            initValue={{
+              key: record.key,
+              maPhong: record.bookingId,
+              ngayDen: moment(new Date(record.startDate)),
+              ngayDi: moment(new Date(record.leaveDate)),
+              soLuongKhach: record.guestNumber,
+              maNguoiDung: record.guestId,
+            }}
+          />
 
-          <Button danger={true} onClick={() => {}}>
+          <Button
+            danger={true}
+            onClick={() => {
+              deleteBooking(record.key)
+                .then((res) => {
+                  console.log(res);
+                  onListChanged();
+                })
+                .catch((err) => {
+                  console.log(err);
+                });
+            }}
+          >
             {labelDelete}
           </Button>
         </Space>

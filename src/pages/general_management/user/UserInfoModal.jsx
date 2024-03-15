@@ -19,6 +19,7 @@ import {
   userRole,
 } from "../../../constants/constants";
 import { addNewUser, updateUser } from "../../../redux/managementSlice";
+import locale from "antd/es/date-picker/locale/en_US";
 
 const config = {
   rules: [
@@ -170,7 +171,7 @@ export default function UserInfoModal({ label, initValue, onUpdateSuccess, mode 
             label={labelBirthday}
             {...config}
           >
-            <DatePicker style={{ width: "100%" }} />
+            <DatePicker style={{ width: "100%" }} locale={locale}/>
           </Form.Item>
 
           {/* gender */}
