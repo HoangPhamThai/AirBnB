@@ -92,9 +92,7 @@ export default function UserActionMenu() {
           size={30}
           icon={<UserOutlined />}
           onClick={() => {
-            if (userInfo.user.role === userRole.user) {
-              navigate(appPath.customer);
-            }
+            navigate(appPath.customer);
           }}
         />
       );
